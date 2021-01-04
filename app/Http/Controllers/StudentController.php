@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\StudentExport;
 use App\Models\Department;
 use App\Models\Grade;
 use App\Models\Student;
@@ -9,6 +10,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
@@ -242,5 +244,10 @@ class StudentController extends Controller
             ];
             return redirect()->back()->with($response);
         }
+    }
+
+    public function export()
+    {
+        return Excel::download(new StudentExport, 'students.xlsx');
     }
 }

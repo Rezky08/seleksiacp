@@ -5,7 +5,7 @@
     <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group">
             <a href="{{ url('student/create') }}" type="button" class="btn btn-sm btn-success">Add</a>
-            <a href="{{ url('student/export') }}" type="button" class="btn btn-sm btn-outline-secondary">Export</a>
+            <a href="{{ url('student/export/excel') }}" type="button" class="btn btn-sm btn-outline-secondary">Export</a>
         </div>
     </div>
 @endsection
